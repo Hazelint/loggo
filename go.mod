@@ -1,3 +1,3 @@
-module loggo
+module github.com/Hazelint/loggo
 
 go 1.18
