@@ -34,5 +34,5 @@ This will be the output in the `go.log` file:
 
 ## License
 
-This project is licensed under the [MIT] License - see the LICENSE.md file for details
+[![GitHub license](https://img.shields.io/github/license/Hazelint/loggo)](https://github.com/Hazelint/loggo/blob/main/LICENSE)
 
