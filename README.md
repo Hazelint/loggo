@@ -22,16 +22,9 @@ This will be the output in the `go.log` file:
 [2022-06-10 00:11:38] Info: Test message
 ```
 
-## Authors
-
-Contributors names and contact info
-
-ex. Jimmy Verburgt 
-ex. [@VerburgtJimmy](https://github.com/VerburgtJimmy)
-
 ## Version History
 
-* 0.1.1
+* 0.1.2
     * Added new logging levels
     * Updated documentation
 * 0.1.1
