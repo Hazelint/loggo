@@ -9,8 +9,8 @@ import (
 
 /*
 	@title: Function Fatal
-	@description: Log a fatal error
-	@params: error
+	@description: Log a fatal
+	@params: data any
 */
 func Fatal(data any) {
 	// Get dir of log file
@@ -25,15 +25,61 @@ func Fatal(data any) {
 	// Get timestamp for log
 	timestamp := time.Now().Format("2006-01-02 15:04:05")
 	// Write new log to file
-	if _, err := file.WriteString("[" + timestamp + "] Fatal error: " + fmt.Sprint(data) + "\n"); err != nil {
+	if _, err := file.WriteString("[" + timestamp + "] Fatal: " + fmt.Sprint(data) + "\n"); err != nil {
 		log.Fatal(err)
 	}
 }
 
 /*
-	@title: Function Fatal
-	@description: Log a fatal error
-	@params: error
+	@title: Function Error
+	@description: Log a error
+	@params: data any
+*/
+func Error(data any) {
+	// Get dir of log file
+	dir := checkFile()
+
+	// Open the log file
+	file, err1 := os.OpenFile(dir, os.O_APPEND|os.O_WRONLY, 0644)
+	if err1 != nil {
+		log.Fatal(err1)
+	}
+	defer file.Close()
+	// Get timestamp for log
+	timestamp := time.Now().Format("2006-01-02 15:04:05")
+	// Write new log to file
+	if _, err := file.WriteString("[" + timestamp + "] Error: " + fmt.Sprint(data) + "\n"); err != nil {
+		log.Fatal(err)
+	}
+}
+
+/*
+	@title: Function Warn
+	@description: Log a warning
+	@params: data any
+*/
+func Warn(data any) {
+	// Get dir of log file
+	dir := checkFile()
+
+	// Open the log file
+	file, err1 := os.OpenFile(dir, os.O_APPEND|os.O_WRONLY, 0644)
+	if err1 != nil {
+		log.Fatal(err1)
+	}
+	defer file.Close()
+	// Get timestamp for log
+	timestamp := time.Now().Format("2006-01-02 15:04:05")
+	// Write new log to file
+	if _, err := file.WriteString("[" + timestamp + "] Warning: " + fmt.Sprint(data) + "\n"); err != nil {
+		log.Fatal(err)
+	}
+}
+
+/*
+	@title: Function Info
+	@description: Log any info
+	@params: data any
 */
 func Info(data any) {
 	// Get dir of log file
@@ -54,8 +100,27 @@ func Info(data any) {
 	}
 }
 
-func Greet() (string, any) {
-	return "Hello", nil
+/*
+	@title: Function Debug
+	@description: Log a debug
+	@params: data any
+*/
+func Debug(data any) {
+	// Get dir of log file
+	dir := checkFile()
+
+	// Open the log file
+	file, err1 := os.OpenFile(dir, os.O_APPEND|os.O_WRONLY, 0644)
+	if err1 != nil {
+		log.Fatal(err1)
+	}
+	defer file.Close()
+	// Get timestamp for log
+	timestamp := time.Now().Format("2006-01-02 15:04:05")
+	// Write new log to file
+	if _, err := file.WriteString("[" + timestamp + "] Debug: " + fmt.Sprint(data) + "\n"); err != nil {
+		log.Fatal(err)
+	}
 }
 
 /*
